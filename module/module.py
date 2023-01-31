@@ -20,7 +20,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.ensemble import GradientBoostingRegressor
 from scipy import linalg
 from scipy import spatial
-from scipy import stats
+#from scipy import stats
 import scipy.spatial.distance
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates

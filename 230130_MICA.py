@@ -4,7 +4,7 @@ from io import StringIO
 import io
 import itertools
 from PIL import Image
-from scipy import stats
+#from scipy import stats
 import pandas as pd
 import scipy
 import time

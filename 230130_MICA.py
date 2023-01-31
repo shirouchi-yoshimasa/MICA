@@ -3,11 +3,10 @@ import datetime
 from io import StringIO
 import io
 import itertools
-from sklearn import preprocessing
 from PIL import Image
 #from scipy import stats
 import pandas as pd
-import scipy
+#import scipy
 import time
 from module.module import Convolution
 from module.module import fft_plot
@@ -23,6 +22,16 @@ from module.module import mahalnobis_distance
 from module.module import md_score
 from module.module import MD_plot
 from module.module import MD_score_plot
+
+def min_max(l):
+    l_min = min(l)
+    l_max = max(l)
+    return [(i - l_min) / (l_max - l_min) for i in l]
+
+def standardization(l):
+    l_mean = statistics.mean(l)
+    l_stdev = statistics.stdev(l)
+    return [(i - l_mean) / l_stdev for i in l]
 
 st.title('土工MAS振動解析')
 
@@ -82,8 +91,7 @@ if submitted:
     df_m1_b = df_m1[df_m1['MD'] > b_p]
     #正規化 
     #mds_1 = scipy.stats.zscore(m_1)
-    mm = preprocessing.MinMaxScaler()
-    mds_1 = mm.fit_transform(m_1)
+    mds_1 = min_max(m_1)
     ms_1 = md_score(mds_1)
     df_ms1 = pd.DataFrame(list(zip(dte2,ms_1)), columns = ['date','MD'])
     #sb_p = 50#閾値

@@ -3,25 +3,25 @@ import math
 import pandas as pd
 import altair as alt
 import itertools
-#import chardet
+import chardet
 import pandas as pd
 from pandas import Series, DataFrame
 import numpy as np
 import numpy.random as random
-#import seaborn as sns
-#import scipy as sc
-#import scipy as sp
-#from sklearn import linear_model
-#from sklearn.linear_model import LinearRegression
-#from sklearn.metrics import mean_squared_error
-#from sklearn.metrics import r2_score
-#from sklearn.linear_model import Lasso
-#from sklearn.model_selection import cross_val_score
-#from sklearn.ensemble import GradientBoostingRegressor
-#from scipy import linalg
-#from scipy import spatial
-#from scipy import stats
-#import scipy.spatial.distance
+import seaborn as sns
+import scipy as sc
+import scipy as sp
+from sklearn import linear_model
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+from sklearn.linear_model import Lasso
+from sklearn.model_selection import cross_val_score
+from sklearn.ensemble import GradientBoostingRegressor
+from scipy import linalg
+from scipy import spatial
+from scipy import stats
+import scipy.spatial.distance
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib.font_manager

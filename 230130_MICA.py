@@ -1,5 +1,3 @@
-pip install scipy
-
 import streamlit as st
 import datetime
 from io import StringIO

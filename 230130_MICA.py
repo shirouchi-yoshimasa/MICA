@@ -3,6 +3,7 @@ import datetime
 from io import StringIO
 import io
 import itertools
+from sklearn import preprocessing
 from PIL import Image
 #from scipy import stats
 import pandas as pd
@@ -80,7 +81,9 @@ if submitted:
     #b_p = 1#閾値
     df_m1_b = df_m1[df_m1['MD'] > b_p]
     #正規化 
-    mds_1 = scipy.stats.zscore(m_1)
+    #mds_1 = scipy.stats.zscore(m_1)
+    mm = preprocessing.MinMaxScaler()
+    mds_1 = mm.fit_transform(m_1)
     ms_1 = md_score(mds_1)
     df_ms1 = pd.DataFrame(list(zip(dte2,ms_1)), columns = ['date','MD'])
     #sb_p = 50#閾値

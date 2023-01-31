@@ -3,7 +3,7 @@ import math
 import pandas as pd
 import altair as alt
 import itertools
-import chardet
+#import chardet
 import pandas as pd
 from pandas import Series, DataFrame
 import numpy as np

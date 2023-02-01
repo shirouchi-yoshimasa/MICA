@@ -3,3 +3,4 @@ matplotlib
 seaborn
 chardet
 scikit-learn
+boto3

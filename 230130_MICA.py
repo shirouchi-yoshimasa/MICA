@@ -39,7 +39,7 @@ maslist = ['1-1','1-2','2-1','2-2']
 
 with st.form("my_form", clear_on_submit=False):
     MAS_name = st.selectbox(label='MAS機種指定してください', options=[f'RFD{i}' for i in maslist])
-    sxmin = st.selectbox(label='グラフ開始時期を選んでください', options=['2022/6/10','2022/9/10','2022/12/10'])
+    sxmin = st.selectbox(label='グラフ表示期間を選んでください(日)', options=[15,30,60,90,180,360])
     trigger = st.selectbox(label='トリガー値を入力してください(初期設定0.1)', options=[0.1,0.2,0.3,0.4,0.5])
     graph = st.selectbox(label='グラフ種類指定してください', options=['MD_SCORE','MAX'])
     submitted = st.form_submit_button("グラフ表示")
@@ -59,6 +59,7 @@ if submitted:
     dt_now = datetime.datetime.now()
     now = dt_now.strftime('%Y%m%d')[2::]
     sxmax = dt_now.strftime('%Y/%m/%d')
+    sxmin=(dt_now+datetime.timedelta(days=-int(sxmin))).strftime('%Y/%m/%d')
     b_p = 1#MD閾値
     sb_p = 20#MDscore閾値
     #周波数帯1000Hz毎に区間平均で畳み込み

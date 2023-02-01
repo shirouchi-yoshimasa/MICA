@@ -2,3 +2,4 @@ scipy
 matplotlib
 seaborn
 chardet
+sklearn

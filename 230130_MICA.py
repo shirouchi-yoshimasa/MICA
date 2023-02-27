@@ -72,6 +72,7 @@ if submitted:
     df_fn = fn_transport(s3)
     fn = df_fn.values.tolist()
     fn = list(itertools.chain.from_iterable(fn))
+    fn = [i[0:33] for i in fn]
     files_all = [obj_summary.key for obj_summary in bucket.objects.all()]
     files_fft = [i for i in files_all if '.fft' in i]
     files_fft2 = set(files_fft) - set(fn)

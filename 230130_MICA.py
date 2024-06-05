@@ -33,7 +33,7 @@ def standardization(l):
     l_stdev = statistics.stdev(l)
     return [(i - l_mean) / l_stdev for i in l]
 
-st.title('MAS振動解析')
+st.title('機器振動解析')
 
 maslist = ['1-1','1-2','2-1','2-2']
 
